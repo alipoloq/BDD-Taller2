@@ -15,15 +15,16 @@ namespace BddDotNetLab.Steps
         {
             var options = new ChromeOptions();
             // Ejecutar Chrome/Chromium en modo silencioso (headless) esencial para Codespaces
-            options.AddArgument("--headless");
-            options.AddArgument("--disable-gpu");
-            options.AddArgument("--no-sandbox"); // Necesario para correr dentro de Docker/Codespaces
-            options.AddArgument("--disable-dev-shm-usage");
-            options.AddArgument("--remote-allow-origins=*");
+            // options.AddArgument("--headless");
+            // options.AddArgument("--disable-gpu");
+            // options.AddArgument("--no-sandbox"); // Necesario para correr dentro de Docker/Codespaces
+            // options.AddArgument("--disable-dev-shm-usage");
+            // options.AddArgument("--remote-allow-origins=*");
+            options.AddArgument("--start-maximized");
 
             // Indicamos la ruta del ChromeDriver instalado por la feature "chrometesting" del DevContainer
-            _driver = new ChromeDriver("/usr/local/bin", options);
-            
+            // _driver = new ChromeDriver("/usr/local/bin", options);
+            _driver = new ChromeDriver(options);
             // Espera implícita para que la página renderice los elementos
             _driver.Manage().Timeouts().ImplicitWait = System.TimeSpan.FromSeconds(10);
         }
