@@ -1,8 +1,8 @@
-using OpenQA.Selenium;
-using SeleniumExtras.PageObjects;
-
 namespace SpecFlowPageFactoryExample.Pages
 {
+    using OpenQA.Selenium;
+    using SeleniumExtras.PageObjects;
+
     public class LoginPage
     {
         private readonly IWebDriver _driver;
