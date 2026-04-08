@@ -24,9 +24,9 @@ namespace SpecFlowPageFactoryExample.Pages
             _driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/forgot_password");
         }
 
-        public void EnterCredentials(string username)
+        public void EnterCredentials(string email)
         {
-            TxtEmail.SendKeys(username);
+            TxtEmail.SendKeys(email);
         }
 
         public void ClickLogin()
