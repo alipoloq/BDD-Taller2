@@ -3,7 +3,7 @@ Feature: Login
   QUIERO ingresar mi correo electrónico
   PARA recuperar mi contraseña
 
-  @login_exitoso
+  @recover_password
   Scenario: Iniciar sesión con credenciales olvidadas
     Given Estoy en la página de inicio de sesión
     When Ingreso el correo electrónico "aelisapolo@gmail.com"
