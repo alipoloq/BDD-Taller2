@@ -41,7 +41,7 @@ namespace SpecFlowPageFactoryExample.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", "  COMO usuario del the-internet.herokuapp.com\r\n  QUIERO iniciar sesión en la pági" +
-                    "na\r\n  PARA acceder al area segura", ProgrammingLanguage.CSharp, featureTags);
+                    "na\r\n  PARA recuperar mi contraseña", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,16 +81,16 @@ namespace SpecFlowPageFactoryExample.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Iniciar sesión con credenciales válidas")]
+        [Xunit.SkippableFactAttribute(DisplayName="Recuperar credenciales olvidadas")]
         [Xunit.TraitAttribute("FeatureTitle", "Login")]
-        [Xunit.TraitAttribute("Description", "Iniciar sesión con credenciales válidas")]
-        [Xunit.TraitAttribute("Category", "login_exitoso")]
+        [Xunit.TraitAttribute("Description", "Recuperar credenciales válidas")]
+        [Xunit.TraitAttribute("Category", "recover_password")]
         public void IniciarSesionConCredencialesValidas()
         {
             string[] tagsOfScenario = new string[] {
-                    "login_exitoso"};
+                    "recover_password"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Iniciar sesión con credenciales válidas", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Recuperar credenciales olvidadas", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -102,16 +102,16 @@ namespace SpecFlowPageFactoryExample.Features
             {
                 this.ScenarioStart();
 #line 8
-    testRunner.Given("Estoy en la página de inicio de sesión", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Estoy en la página de olvidé contraseña", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-    testRunner.When("Ingreso el nombre de usuario \"tomsmith\" y la contraseña \"SuperSecretPassword!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("Ingreso el correo electrónico \"aelisapolo@gmail.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
-    testRunner.And("Hago clic en el botón de login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("Hago clic en el botón Retrieve password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
-    testRunner.Then("Debería ver un mensaje de éxito indicando \"You logged into a secure area!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("Debería ver un mensaje de éxito indicando \"An email has been sent for password recovery!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
